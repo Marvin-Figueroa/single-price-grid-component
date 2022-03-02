@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --color-cyan: hsl(179, 62%, 43%);
+  --color-bright-yellow: hsl(71, 73%, 54%);
+  --color-light-gray: hsl(204, 43%, 93%);
+  --color-grayish-blue: hsl(218, 22%, 67%);
+
+  --container-padding: 4.8rem;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-light-gray);
+  height: 100vh;
+}
+
+.main-content {
+  max-width: 80rem;
+  width: 65%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-info {
+  grid-column: 1 / -1;
+  padding: var(--container-padding);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.info-heading {
+  color: var(--color-cyan);
+  margin: 0 0 2rem 0;
+}
+.info-subheading {
+  color: var(--color-bright-yellow);
+  margin-bottom: 1rem;
+}
+.info-description {
+  color: var(--color-grayish-blue);
+  font-size: 2rem;
+  line-height: 2;
+}
+
+.section-subscription {
+  grid-column: 1 / 2;
+  padding: var(--container-padding);
+  background-color: var(--color-cyan);
+}
+
+.subscription-heading {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.subscription-price {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.price-number {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.price-text {
+  color: hsla(203, 44%, 93%, 0.8);
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.subscription-text {
+  font-size: 2rem;
+  color: var(--color-light-gray);
+  margin-bottom: 3rem;
+}
+
+.subscription-cta:link,
+.subscription-cta:visited {
+  background-color: var(--color-bright-yellow);
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-why {
+  grid-column: 2 / -1;
+  padding: var(--container-padding);
+  background-color: hsl(178, 48%, 52%);
+}
+
+.why-heading {
+  font-size: 2.4rem;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 2rem;
+}
+
+.why-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.why-list-item {
+  color: hsla(203, 44%, 93%, 0.8);
+  font-size: 1.8rem;
+}
+
+/* Width <= 1168px */
+@media screen and (max-width: 73em) {
+  html {
+    font-size: 50%;
+  }
+
+  .main-content {
+    width: 70%;
+  }
+}
+
+/* Width <= 976px */
+@media screen and (max-width: 61em) {
+  :root {
+    --container-padding: 4rem;
+  }
+
+  html {
+    font-size: 44%;
+  }
+
+  .main-content {
+    width: 74%;
+  }
+}
+
+/* Width <= 816px */
+@media screen and (max-width: 51em) {
+  :root {
+    --container-padding: 3.5rem;
+  }
+
+  html {
+    font-size: 38%;
+  }
+
+  .main-content {
+    width: 78%;
+  }
+}
+
+/* Width <= 688px
+@media screen and (max-width: 43em) {
+  html {
+    font-size: 33%;
+  }
+} */
+
+/* Width <= 608px */
+@media screen and (max-width: 43em) {
+  :root {
+    --container-padding: 4.5rem;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    width: 80%;
+  }
+
+  .section-info {
+    grid-row: 1;
+  }
+
+  .section-subscription {
+    grid-row: 2;
+  }
+
+  .subscription-cta:link,
+  .subscription-cta:visited {
+    border-radius: 4px;
+  }
+
+  .section-why {
+    grid-row: 3;
+    grid-column: 1;
+  }
+}
